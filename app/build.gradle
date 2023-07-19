@@ -62,13 +62,14 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:2.6.1")
     //  ROOM
     implementation("androidx.room:room-runtime:2.5.2")
-    annotationProcessor("androidx.room:room-compiler:2.5.2")
+    kapt("androidx.room:room-compiler:2.5.2")
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:2.5.2")
     // optional - Paging 3 Integration
     implementation("androidx.room:room-paging:2.5.2")
     //picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+
 
 
 
