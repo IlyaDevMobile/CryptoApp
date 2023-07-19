@@ -11,7 +11,7 @@ import com.ilyakoz.cryptoapp.pojo.CoinPriceInfo
 @Dao
 interface CoinPriceInfoDao {
 
-    @Query("SELECT * FROM full_price_list2 ORDER BY lastUpdate")
+    @Query("SELECT * FROM full_price_list2 ORDER BY lastUpdate DESC")
     fun getPriceList(): LiveData<List<CoinPriceInfo>>
 
 
