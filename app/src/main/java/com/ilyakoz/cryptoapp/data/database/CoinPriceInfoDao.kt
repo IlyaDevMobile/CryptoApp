@@ -1,11 +1,11 @@
-package com.ilyakoz.cryptoapp.database
+package com.ilyakoz.cryptoapp.data.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.ilyakoz.cryptoapp.pojo.CoinPriceInfo
+import com.ilyakoz.cryptoapp.data.model.CoinPriceInfo
 
 
 @Dao

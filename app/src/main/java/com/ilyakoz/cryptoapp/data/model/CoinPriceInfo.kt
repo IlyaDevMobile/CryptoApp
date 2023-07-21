@@ -1,10 +1,10 @@
-package com.ilyakoz.cryptoapp.pojo
+package com.ilyakoz.cryptoapp.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import com.ilyakoz.cryptoapp.api.ApiFactory.BASE_IMAGE_URL
+import com.ilyakoz.cryptoapp.data.network.ApiFactory.BASE_IMAGE_URL
 import com.ilyakoz.cryptoapp.utils.convertTimestampToTime
 
 
