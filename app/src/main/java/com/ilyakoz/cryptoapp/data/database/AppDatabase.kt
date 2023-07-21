@@ -1,10 +1,10 @@
-package com.ilyakoz.cryptoapp.database
+package com.ilyakoz.cryptoapp.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.ilyakoz.cryptoapp.pojo.CoinPriceInfo
+import com.ilyakoz.cryptoapp.data.model.CoinPriceInfo
 
 
 @Database(entities = [CoinPriceInfo::class], version = 7, exportSchema = false)
@@ -29,5 +29,5 @@ abstract class AppDatabase : RoomDatabase() {
 
         }
     }
-    abstract fun coinPriceInfoDao():CoinPriceInfoDao
+    abstract fun coinPriceInfoDao(): CoinPriceInfoDao
 }

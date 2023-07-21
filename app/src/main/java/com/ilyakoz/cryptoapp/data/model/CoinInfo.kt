@@ -1,4 +1,4 @@
-package com.ilyakoz.cryptoapp.pojo
+package com.ilyakoz.cryptoapp.data.model
 
 import android.media.Rating
 import com.google.gson.annotations.Expose

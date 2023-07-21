@@ -1,14 +1,14 @@
-package com.ilyakoz.cryptoapp
+package com.ilyakoz.cryptoapp.presentation
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.google.gson.Gson
-import com.ilyakoz.cryptoapp.api.ApiFactory
-import com.ilyakoz.cryptoapp.database.AppDatabase
-import com.ilyakoz.cryptoapp.pojo.CoinPriceInfo
-import com.ilyakoz.cryptoapp.pojo.CoinPriceInfoRawData
+import com.ilyakoz.cryptoapp.data.network.ApiFactory
+import com.ilyakoz.cryptoapp.data.database.AppDatabase
+import com.ilyakoz.cryptoapp.data.model.CoinPriceInfo
+import com.ilyakoz.cryptoapp.data.model.CoinPriceInfoRawData
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.concurrent.TimeUnit

@@ -1,8 +1,7 @@
-package com.ilyakoz.cryptoapp.api
+package com.ilyakoz.cryptoapp.data.network
 
-import com.ilyakoz.cryptoapp.pojo.CoinInfoListOfData
-import com.ilyakoz.cryptoapp.pojo.CoinPriceInfo
-import com.ilyakoz.cryptoapp.pojo.CoinPriceInfoRawData
+import com.ilyakoz.cryptoapp.data.model.CoinInfoListOfData
+import com.ilyakoz.cryptoapp.data.model.CoinPriceInfoRawData
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

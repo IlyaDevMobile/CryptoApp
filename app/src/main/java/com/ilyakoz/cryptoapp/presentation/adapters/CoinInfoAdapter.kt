@@ -1,4 +1,4 @@
-package com.ilyakoz.cryptoapp.adapters
+package com.ilyakoz.cryptoapp.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import com.ilyakoz.cryptoapp.R
 import com.ilyakoz.cryptoapp.databinding.ItemCoinInfoBinding
-import com.ilyakoz.cryptoapp.pojo.CoinPriceInfo
+import com.ilyakoz.cryptoapp.data.model.CoinPriceInfo
 import com.squareup.picasso.Picasso
 
 

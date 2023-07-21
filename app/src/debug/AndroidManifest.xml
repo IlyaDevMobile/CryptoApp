@@ -2,7 +2,7 @@
 
     <application>
         <activity
-            android:name="com.ilyakoz.cryptoapp.CoinDetailActivity"
+            android:name="com.ilyakoz.cryptoapp.presentation.CoinDetailActivity"
             android:exported="false"
 
             />
