@@ -29,12 +29,12 @@ class CoinViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun loadData() {
-        val disposable = ApiFactory.apiService.getTopCoinInfo(limit = 10)
+        val disposable = ApiFactory.apiService.getTopCoinInfo()
             .map { it.data?.map { it.coinInfo?.name }?.joinToString(",").toString() }
             .flatMap { ApiFactory.apiService.getFullPriceList(fsyms = it) }
             .map { getPriceListGetRawData(it) }
-            .repeat()
             .delaySubscription(10,TimeUnit.SECONDS)
+            .repeat()
             .retry()
             .subscribeOn(Schedulers.io())
             .subscribe({

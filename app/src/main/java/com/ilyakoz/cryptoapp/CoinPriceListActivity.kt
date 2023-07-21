@@ -1,5 +1,6 @@
 package com.ilyakoz.cryptoapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -23,19 +24,20 @@ class CoinPriceListActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         val adapter = CoinInfoAdapter(this)
-        adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener{
+        adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
-                Log.d("TEST_CLICK",coinPriceInfo.fromsymbol)
+                val intent = CoinDetailActivity.newIntent(this@CoinPriceListActivity,coinPriceInfo.fromsymbol)
+                startActivity(intent)
             }
         }
         binding.rvCoinPriceList.adapter = adapter
-
         viewModel.priceList.observe(this, Observer {
             adapter.coinInfoList = it
         })
-
-
     }
-
-
 }
+
+
+
+
+
