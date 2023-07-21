@@ -32,10 +32,10 @@ class CoinDetailActivity : AppCompatActivity() {
                 binding.tvMinPrice.text = it.lowday.toString()
                 binding.tvMaxPrice.text = it.highday.toString()
                 binding.tvLastMarket.text = it.lastmarket
-                binding.tvLastUpdate.text = it.getFormattedTime()
+                binding.tvLastUpdate.text = it.lastupdate
                 binding.tvFromSymbol.text = it.fromsymbol
                 binding.tvToSymbol.text = it.tosymbol
-                Picasso.get().load(it.getFullImageUrl()).into(binding.ivLogoCoin)
+                Picasso.get().load(it.imageurl).into(binding.ivLogoCoin)
             })
         }
     }

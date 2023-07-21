@@ -2,7 +2,6 @@ package com.ilyakoz.cryptoapp.data.network
 
 import com.ilyakoz.cryptoapp.data.network.model.CoinNamesListDto
 import com.ilyakoz.cryptoapp.data.network.model.CoinInfoJsonContainerDto
-import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -18,7 +17,7 @@ interface ApiService {
     @GET("pricemultifull")
     suspend fun getFullPriceList(
         @Query(Query_PARAM_TO_API_KEY) apiKey: String = "",
-        @Query(Query_PARAM_FROM_SYMBOL) fsyms: String = CRYPTO_BITCOIN,
+        @Query(Query_PARAM_FROM_SYMBOL) fsyms: String,
         @Query(Query_PARAM_TO_SYMBOLS) tsyms: String = CURRENCY_USD,
         ): CoinInfoJsonContainerDto
 
@@ -31,7 +30,6 @@ interface ApiService {
         private const val Query_PARAM_TO_API_KEY = "api_key"
 
         private const val CURRENCY_USD = "USD"
-        private const val CRYPTO_BITCOIN = "BTC"
 
     }
 
