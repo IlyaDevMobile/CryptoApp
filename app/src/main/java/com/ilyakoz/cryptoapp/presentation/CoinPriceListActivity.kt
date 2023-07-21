@@ -34,7 +34,7 @@ class CoinPriceListActivity : AppCompatActivity() {
         }
         binding.rvCoinPriceList.adapter = adapter
         viewModel.coinInfoList.observe(this, Observer {
-            adapter.coinInfoList = it
+            adapter.submitList(it)
         })
     }
 }

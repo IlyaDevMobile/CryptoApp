@@ -4,44 +4,36 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.Observer
+import com.ilyakoz.cryptoapp.R
 import com.ilyakoz.cryptoapp.databinding.ActivityCoinDetailBinding
-import com.squareup.picasso.Picasso
 
 class CoinDetailActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityCoinDetailBinding
-
-    private val viewModel: CoinViewModel by lazy {
-        CoinViewModel(application)
+    private val  binding by lazy {
+        ActivityCoinDetailBinding.inflate(layoutInflater)
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCoinDetailBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
         if (!intent.hasExtra(EXTRA_FROM_SYMBOL)) {
             finish()
             return
         }
-        val fromSymbol = intent.getStringExtra(EXTRA_FROM_SYMBOL)
-        if (fromSymbol != null) {
-            viewModel.getDetailInfo(fromSymbol).observe(this, Observer {
-                binding.tvPrice.text = it.price.toString()
-                binding.tvMinPrice.text = it.lowday.toString()
-                binding.tvMaxPrice.text = it.highday.toString()
-                binding.tvLastMarket.text = it.lastmarket
-                binding.tvLastUpdate.text = it.lastupdate
-                binding.tvFromSymbol.text = it.fromsymbol
-                binding.tvToSymbol.text = it.tosymbol
-                Picasso.get().load(it.imageurl).into(binding.ivLogoCoin)
-            })
+        val fromSymbol = intent.getStringExtra(EXTRA_FROM_SYMBOL) ?:EMPTY_SYMBOL
+        if (savedInstanceState == null){
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, CoinDetailFragment.newInstance(fromSymbol))
+                .commit()
         }
     }
 
     companion object {
-       private const val EXTRA_FROM_SYMBOL = "fsym"
+        private const val EXTRA_FROM_SYMBOL = "fsym"
+        private const val EMPTY_SYMBOL = ""
+
 
         fun newIntent(context: Context, fromSymbol: String): Intent {
             val intent = Intent(context, CoinDetailActivity::class.java)
