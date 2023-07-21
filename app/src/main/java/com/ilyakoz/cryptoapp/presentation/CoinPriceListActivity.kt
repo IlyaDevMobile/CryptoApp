@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.ilyakoz.cryptoapp.presentation.adapters.CoinInfoAdapter
 import com.ilyakoz.cryptoapp.databinding.ActivityCoinPriceListBinding
-import com.ilyakoz.cryptoapp.data.model.CoinPriceInfo
+import com.ilyakoz.cryptoapp.data.network.model.CoinInfoDto
 
 class CoinPriceListActivity : AppCompatActivity() {
 
@@ -23,7 +23,7 @@ class CoinPriceListActivity : AppCompatActivity() {
         setContentView(view)
         val adapter = CoinInfoAdapter(this)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
-            override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
+            override fun onCoinClick(coinPriceInfo: CoinInfoDto) {
                 val intent = CoinDetailActivity.newIntent(
                     this@CoinPriceListActivity,
                     coinPriceInfo.fromsymbol
