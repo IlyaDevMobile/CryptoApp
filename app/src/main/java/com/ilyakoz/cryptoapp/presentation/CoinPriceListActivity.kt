@@ -3,6 +3,7 @@ package com.ilyakoz.cryptoapp.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.ilyakoz.cryptoapp.R
 import com.ilyakoz.cryptoapp.presentation.adapters.CoinInfoAdapter
 import com.ilyakoz.cryptoapp.databinding.ActivityCoinPriceListBinding
 import com.ilyakoz.cryptoapp.data.network.model.CoinInfoDto
@@ -25,17 +26,36 @@ class CoinPriceListActivity : AppCompatActivity() {
         val adapter = CoinInfoAdapter(this)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinInfo) {
-                val intent = CoinDetailActivity.newIntent(
-                    this@CoinPriceListActivity,
-                    coinPriceInfo.fromsymbol
-                )
-                startActivity(intent)
+                if (isOnePaneMode()){
+                    launchDetailActivity(coinPriceInfo.fromsymbol)
+                } else {
+                    launchDetailFragment(coinPriceInfo.fromsymbol)
+                }
             }
         }
         binding.rvCoinPriceList.adapter = adapter
         viewModel.coinInfoList.observe(this, Observer {
             adapter.submitList(it)
         })
+    }
+
+    private fun isOnePaneMode() = binding.fragmentContainer == null
+
+    private fun launchDetailActivity(fromsymbol: String){
+        val intent = CoinDetailActivity.newIntent(
+            this@CoinPriceListActivity,
+            fromsymbol
+        )
+        startActivity(intent)
+    }
+
+    private fun launchDetailFragment(fromsymbol: String){
+        supportFragmentManager.popBackStack()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container,CoinDetailFragment.newInstance((fromsymbol)))
+            .addToBackStack(null)
+            .commit()
     }
 }
 

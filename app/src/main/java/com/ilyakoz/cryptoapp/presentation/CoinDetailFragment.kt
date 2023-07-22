@@ -53,6 +53,11 @@ class CoinDetailFragment : Fragment() {
         return requireArguments().getString(EXTRA_FROM_SYMBOL, EMPTY_SYMBOL)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
     companion object {
         private const val EXTRA_FROM_SYMBOL = "fsym"
         private const val EMPTY_SYMBOL = ""
