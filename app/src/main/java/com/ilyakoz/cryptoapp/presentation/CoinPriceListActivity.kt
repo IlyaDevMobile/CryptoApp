@@ -3,22 +3,31 @@ package com.ilyakoz.cryptoapp.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.ilyakoz.cryptoapp.R
 import com.ilyakoz.cryptoapp.presentation.adapters.CoinInfoAdapter
 import com.ilyakoz.cryptoapp.databinding.ActivityCoinPriceListBinding
 import com.ilyakoz.cryptoapp.data.network.model.CoinInfoDto
 import com.ilyakoz.cryptoapp.domain.CoinInfo
+import javax.inject.Inject
 
 class CoinPriceListActivity : AppCompatActivity() {
 
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
     private lateinit var binding: ActivityCoinPriceListBinding
 
-    private val viewModel: CoinViewModel by lazy {
-        CoinViewModel(application)
+    private lateinit var viewModel: CoinViewModel
+
+    private val component by lazy {
+        (application as CoinApp).component
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        component.inject(this)
+
         super.onCreate(savedInstanceState)
         binding = ActivityCoinPriceListBinding.inflate(layoutInflater)
         val view = binding.root
@@ -34,6 +43,7 @@ class CoinPriceListActivity : AppCompatActivity() {
             }
         }
         binding.rvCoinPriceList.adapter = adapter
+        viewModel = ViewModelProvider(this,viewModelFactory)[CoinViewModel::class.java]
         viewModel.coinInfoList.observe(this, Observer {
             adapter.submitList(it)
         })
