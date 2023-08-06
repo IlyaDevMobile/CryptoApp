@@ -16,11 +16,11 @@ interface DataModule {
     @Binds
     fun bindCoinRepository(impl: CoinRepositoryImpl): CoinRepository
 
-    companion object{
+    companion object {
 
 
         @Provides
-        fun provideCoinInfoDao(application: Application): CoinInfoDao{
+        fun provideCoinInfoDao(application: Application): CoinInfoDao {
             return AppDatabase.getInstance(application).coinPriceInfoDao()
         }
     }
