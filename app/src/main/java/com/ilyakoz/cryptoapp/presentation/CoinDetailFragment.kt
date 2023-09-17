@@ -1,16 +1,12 @@
 package com.ilyakoz.cryptoapp.presentation
 
 import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.ilyakoz.cryptoapp.databinding.ActivityCoinDetailBinding
 import com.ilyakoz.cryptoapp.databinding.FragmentCoinDetailBinding
 import com.squareup.picasso.Picasso
 import javax.inject.Inject

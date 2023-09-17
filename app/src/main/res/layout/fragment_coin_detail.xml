@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_main"
+    android:background="@color/white"
     tools:context=".presentation.CoinDetailActivity">
 
     <ImageView
@@ -21,8 +21,7 @@
         android:id="@+id/tvFromSymbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:textColor="@android:color/holo_purple"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/tvSlash"
         app:layout_constraintEnd_toStartOf="@id/tvSlash"
@@ -35,10 +34,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
 
-        android:fontFamily="cursive"
         android:padding="8dp"
         android:text="@string/slash"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,8 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:fontFamily="cursive"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/tvSlash"
         app:layout_constraintStart_toEndOf="@id/tvSlash"
@@ -62,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:alpha="0.5"
-        app:cardBackgroundColor="@color/teal_200"
+        android:backgroundTint="@color/black"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
         app:cardUseCompatPadding="true"
@@ -70,6 +67,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:backgroundTint="@color/white"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
             android:paddingBottom="8dp">
@@ -78,11 +76,10 @@
                 android:id="@+id/tvPriceLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="cursive"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
                 android:text="@string/price"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -93,8 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:fontFamily="cursive"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/tvPriceLabel"
@@ -105,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/black"
+                android:background="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/tvPriceLabel" />
 
             <TextView
@@ -113,12 +109,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="cursive"
                 android:paddingStart="8dp"
 
                 android:paddingEnd="8dp"
                 android:text="@string/min_price_for_day"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -130,7 +125,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="cursive"
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -142,7 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/black"
+                android:background="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/tvMinPriceLabel" />
 
             <TextView
@@ -150,12 +144,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="cursive"
                 android:paddingStart="8dp"
 
                 android:paddingEnd="8dp"
                 android:text="@string/max_price_for_day"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -168,7 +161,6 @@
 
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="cursive"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -180,7 +172,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/black"
+                android:background="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/tvMaxPriceLabel" />
 
             <TextView
@@ -188,12 +180,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="cursive"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-
                 android:text="@string/last_market_label"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -205,8 +195,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="cursive"
-                android:textColor="#000"
+                android:textColor="@color/white"
 
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -218,7 +207,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/black"
+                android:background="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/tvLastMarketLabel" />
 
             <TextView
@@ -226,12 +215,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="cursive"
 
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
                 android:text="@string/last_updated"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -243,8 +231,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="cursive"
-                android:textColor="#000"
+                android:textColor="@color/white"
 
                 android:textSize="16sp"
                 android:textStyle="bold"
